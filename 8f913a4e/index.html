@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="zh">
+    
+    <head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport" />
+    <meta name="description" content="jsDelivr的替代品：渺软公益 CDN" />
+    <meta name="hexo-theme-A4" content="v1.9.9" />
+    <link rel="alternate icon" type="image/webp" href="/img/favicon.webp">
+    <title>hvov~ | 喵喵喵</title>
+
+    
+        
+<link rel="stylesheet" href="/css/highlight/style1.css">
+
+        
+<link rel="stylesheet" href="/css/reset.css">
+
+        
+<link rel="stylesheet" href="/css/markdown.css">
+
+        
+<link rel="stylesheet" href="/css/fonts.css">
+ 
+         <!--注意：首页既不是post也不是page-->
+        
+            
+<link rel="stylesheet" href="/css/waline.css">
+
+        
+        
+        
+<link rel="stylesheet" href="/css/ui.css">
+ 
+        
+<link rel="stylesheet" href="/css/style.css">
+
+
+        
+            <!--返回顶部css-->
+            
+<link rel="stylesheet" href="/css/returnToTop.css">
+
+            
+<link rel="stylesheet" href="/css/unicons.css">
+
+        
+        
+            <!--目录-->
+            
+<link rel="stylesheet" href="/css/toc.css">
+
+        
+    
+
+    
+        
+<link rel="stylesheet" href="/css/returnToLastPage.css">
+
+    
+    
+   
+<link rel="stylesheet" href="/css/lightgallery-bundle.min.css">
+
+
+   
+        
+<link rel="stylesheet" href="/css/custom.css">
+
+    
+    <link rel='stylesheet' href='https://chinese-fonts-cdn.deno.dev/packages/lxgwwenkai/dist/LXGWWenKai-Regular/result.css' /> 
+<meta name="generator" content="Hexo 7.3.0"><link rel="alternate" href="/atom.xml" title="hvov~" type="application/atom+xml">
+</head>
+    
+    
+
+    
+    
+
+
+
+    
+
+    
+    
+
+
+
+
+    
+    
+
+
+    <body>
+        <script src="/js/darkmode-js.min.js"></script>
+        
+        <script>
+            const options = {
+                bottom: '40px', // default: '32px'
+                right: 'unset', // default: '32px'
+                left: '42px', // default: 'unset'
+                time: '0.3s', // default: '0.3s'
+                mixColor: '#fff', // default: '#fff'
+                backgroundColor: ' #e4e4e4 ',  // default: '#fff'
+                buttonColorDark: '#100f2c',  // default: '#100f2c'
+                buttonColorLight: '#fff', // default: '#fff'
+                saveInCookies: true, // default: true,
+                label: '🌓', // default: ''
+                autoMatchOsTheme: true // default: true
+            }
+            const darkmode = new Darkmode(options);
+            darkmode.showWidget();
+        </script>
+        
+        
+            
+                <div class="left-toc-container">
+                    <nav id="toc" class="bs-docs-sidebar"></nav>
+                </div>
+            
+        
+        <div class="paper">
+
+            
+
+            
+                <div class="shadow-drop-2-bottom paper-main">
+                    
+
+
+<div class="header">
+    <div class="header-container">
+        <style>
+            .header-img {
+                width: 56px;
+                height: auto;
+                object-fit: cover; /* 保持图片比例 */
+                transition: transform 0.3s ease-in-out; 
+                border-radius: 0; 
+            }
+            
+        </style>
+        <img 
+            alt="^-^" 
+            cache-control="max-age=86400" 
+            class="header-img" 
+            src="/img/favicon.webp" 
+        />
+        <div class="header-content">
+            <a class="logo" href="/">hvov~</a> 
+            <span class="description">hvov&#39;s fun</span> 
+        </div>
+    </div>
+    
+   
+    <ul class="nav">
+        
+            
+                <li><a href="/">🐈首页</a></li>
+            
+        
+            
+                <li><a href="/list/">⛰️文章</a></li>
+            
+        
+            
+                <li><a href="/tags/">📌标签</a></li>
+            
+        
+            
+                <li><a href="/categories/">🔖分类</a></li>
+            
+        
+            
+                <li><a href="/message/">📬留言</a></li>
+            
+        
+            
+                <li><a href="/about/">😎关于</a></li>
+            
+        
+    </ul>
+</div>
+
+                    
+                    
+
+                    
+                    
+
+                    <!--说明是文章post页面-->
+                    
+                        <div class="post-main">
+    
+
+    
+        
+            
+                <div class="post-main-title" style="text-align: center;">
+                    jsDelivr的替代品：渺软公益 CDN
+                </div>
+            
+        
+      
+    
+
+    
+
+        
+            <div class="post-head-meta-center">
+        
+                
+                    <span>最近更新：2025-06-29</span> 
+                
+                
+                    
+                        &nbsp; | &nbsp;
+                    
+                     <span>字数总计：651</span>
+                
+                
+                    
+                        &nbsp; | &nbsp;
+                    
+                    <span>阅读估时：2分钟</span>
+                
+                
+                    
+                        &nbsp; | &nbsp;
+                    
+                    <span id="busuanzi_container_page_pv">
+                        阅读量：<span id="busuanzi_value_page_pv"></span>次
+                    </span>
+                
+            </div>
+    
+
+    <div class="post-md">
+        
+            
+                <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E5%89%8D%E8%A8%80"><span class="post-toc-text">前言</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E4%BB%8B%E7%BB%8D"><span class="post-toc-text">介绍</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E6%9B%BF%E6%8D%A2%E6%96%B9%E6%B3%95"><span class="post-toc-text">替换方法</span></a></li></ol>
+            
+        
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/hint.css/2.7.0/hint.min.css"><div class=".article-gallery"><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>众所周知，jsDelivr 是一个大名鼎鼎的静态资源 cdn 加速平台，它以免费、高速、支持 github 文件的特点而备受欢迎，但是，就目前国内网络环境来看，现在在国内使用它作为 cdn 并不理想，下面是几个 ping 测试结果图：</p>
+<p><a target="_blank" rel="noopener" href="https://pic.imgdb.cn/item/65aa32e0871b83018a31853b.png" title="三大运营商综合测试，已经有接近1&#x2F;3的省份瘫痪了" class="gallery-item" style="box-shadow: none;"> <img src="https://pic.imgdb.cn/item/65aa32e0871b83018a31853b.png" alt="三大运营商综合测试，已经有接近1&#x2F;3的省份瘫痪了"></a></p>
+<p><a target="_blank" rel="noopener" href="https://pic.imgdb.cn/item/65aa32f9871b83018a31e091.png" title="电信单独测试也不理想" class="gallery-item" style="box-shadow: none;"> <img src="https://pic.imgdb.cn/item/65aa32f9871b83018a31e091.png" alt="电信单独测试也不理想"></a></p>
+<p><a target="_blank" rel="noopener" href="https://pic.imgdb.cn/item/65aa3324871b83018a327afe.png" class="gallery-item" style="box-shadow: none;"> <img src="https://pic.imgdb.cn/item/65aa3324871b83018a327afe.png"></a></p>
+<p><a target="_blank" rel="noopener" href="https://pic.imgdb.cn/item/65aa3354871b83018a332bbc.png" title="联通、移动几乎瘫痪" class="gallery-item" style="box-shadow: none;"> <img src="https://pic.imgdb.cn/item/65aa3354871b83018a332bbc.png" alt="联通、移动几乎瘫痪"></a></p>
+<p><a target="_blank" rel="noopener" href="https://pic.imgdb.cn/item/65aa3371871b83018a339dde.png" title="jsDelivr的另一个服务器在国内也比较慢" class="gallery-item" style="box-shadow: none;"> <img src="https://pic.imgdb.cn/item/65aa3371871b83018a339dde.png" alt="jsDelivr的另一个服务器在国内也比较慢"></a></p>
+<p>综上所述，目前还在用 jsDelivr 的用户应该尽快更换其他 cdn！</p>
+<h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>渺软公益 CDN 正是在上述情况中催生的，以下是<a target="_blank" rel="noopener" href="https://cdn.onmicrosoft.cn/">官网</a>的介绍：</p>
+<blockquote>
+<p>在开发者日常的开发和使用中，比如写某些简单的 Demo，或者开发一些小工具，小玩意的时候，总会使用到某些前端的静态库，当然 UNPKG、jsDelivr 这样的网站就是为此而生的。但是我们是一群中国的开发者，为此，国外服务商提供的种种服务让我们的网站体验一次次的降级，于是更多的静态资源被放在源站上，但是这仍然解决不了静态资源变慢的问题。于是，本项目出现了，由私人搭建的备案域名来使用 Dogecloud&nbsp;CDN，为开发者提供一个高速简单，开箱即用的公益 CDN，本项目的宗旨是：限制更少，更简单，只为开发 Just for Developers</p>
+</blockquote>
+<p>这是一款免费的 cdn，由<a target="_blank" rel="noopener" href="https://icodeq.com/2022/5c18919d3591/index.html">Zkeq</a>大佬搭建，支持回源到 jsDelivr、UNPKG 和 cdnjs 上的任意内容，而且目前的请求限制高达单个域名<code>64GB/24h</code>！</p>
+<p><a target="_blank" rel="noopener" href="https://pic.imgdb.cn/item/65aa3390871b83018a341528.jpg" class="gallery-item" style="box-shadow: none;"> <img src="https://pic.imgdb.cn/item/65aa3390871b83018a341528.jpg"></a></p>
+<p>而且速度也是相当快，以下为 ping 测试结果：</p>
+<p><a target="_blank" rel="noopener" href="https://pic.imgdb.cn/item/65aa33a9871b83018a347d6b.png" class="gallery-item" style="box-shadow: none;"> <img src="https://pic.imgdb.cn/item/65aa33a9871b83018a347d6b.png"></a></p>
+<p>全绿！</p>
+<h2 id="替换方法"><a href="#替换方法" class="headerlink" title="替换方法"></a>替换方法</h2><p>替换方法非常简单，将你博客或项目中引用的 jsDelivr、UNPKG 或 cdnjs 的 cdn 链接的域名换成渺软公益 CDN 的就行，具体对照下表：</p>
+<table>
+<thead>
+<tr>
+<th align="center">cdn 平台</th>
+<th align="center">跟换域名</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">jsDelivr</td>
+<td align="center"><a target="_blank" rel="noopener" href="https://jsd.onmicrosoft.cn/">https://jsd.onmicrosoft.cn</a></td>
+</tr>
+<tr>
+<td align="center">UNPKG</td>
+<td align="center"><a target="_blank" rel="noopener" href="https://npm.onmicrosoft.cn/">https://npm.onmicrosoft.cn</a></td>
+</tr>
+<tr>
+<td align="center">cdnjs</td>
+<td align="center"><a target="_blank" rel="noopener" href="https://cdnjs.onmicrosoft.cn/">https://cdnjs.onmicrosoft.cn</a></td>
+</tr>
+</tbody></table>
+<p>比如我要使用渺软公益 CDN 来引用 jsDelivr 上的 jQuery，我就应该把<code>https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.min.js</code>换成<code>https://jsd.onmicrosoft.cn/npm/jquery@3.6.4/dist/jquery.min.js</code></p>
+<p>目前已经有许多小伙伴开始使用它了，就目前可观测数据来看，甚至有一个小时的 jsDelivr 请求数高达<code>5w+</code>次，我的博客目前也已开始使用。</p>
+<p><a target="_blank" rel="noopener" href="https://pic.imgdb.cn/item/65aa32ba871b83018a30fcf1.png" class="gallery-item" style="box-shadow: none;"> <img src="https://pic.imgdb.cn/item/65aa32ba871b83018a30fcf1.png"></a></p>
+<p>现在就看这个 cdn 能用多久了，虽然是公益项目，但也是有规定的，Zkeq 明确表示请不要用它来托管私人静态图片、私人字体文件等大流量资源，还请大家不要滥用此 cdn，以免不必要的损失！</p>
+</div>
+    </div>
+
+    <div class="post-meta">
+        <i>
+        
+            <span>2023-08-05</span>
+            
+                <span>该篇文章被 hvov</span>
+            
+            
+                <span>打上标签:
+                    
+                    
+                        <a href='/tags/jsDelivr/'>
+                            jsDelivr
+                        </a>
+                    
+                        <a href='/tags/CDN/'>
+                            CDN
+                        </a>
+                    
+                        <a href='/tags/%E6%B8%BA%E8%BD%AF%E5%85%AC%E7%9B%8A/'>
+                            渺软公益
+                        </a>
+                    
+                </span>
+             
+             
+                <span>归为分类:
+                    
+                    
+                        <a href='/categories/%E5%88%86%E4%BA%AB/'>
+                            分享
+                        </a>
+                    
+                </span>
+            
+        
+        </i>
+    </div>
+    <br>
+    
+    
+        
+            
+    
+            <div class="post-footer-pre-next">
+                
+                    <span>上一篇：<a href='/6cc079cc/'>Noteonline 正式上线</a></span>
+                
+
+                
+                    <span class="post-footer-pre-next-last-span-right">下一篇：<a href="/2d84c422/">推荐一个Hexo主题：Stellar</a>
+                    </span>
+                
+            </div>
+    
+        
+    
+
+    
+        
+    <div class="comments-container">
+    <div id="comment-anchor"></div>
+    <div class="comment-area-title">
+        
+    </div>
+    
+        
+
+    <div id="waline"></div>
+    <script type="module"  >
+        import { init } from 'https://npm.elemecdn.com/hexo-theme-a4@latest/source/js/waline.mjs';
+        function loadWaline() {
+            init({
+                el: '#waline',
+                serverURL: 'waline.xshaw.top',
+                lang: 'zh-CN',
+                dark: 'body[class~="dark-mode"]',
+                requiredMeta: ['nick','mail'], // cannot customize by theme config, change it yourself
+                search: false, // 禁止表情包搜索
+                reaction: false, // 对文章打分
+                pageview: false, // 浏览量统计
+                comment: false, // 评论数统计
+
+                locale: {
+                    placeholder: '留下你的评论吧。',
+                    sofa: ''
+                },
+            });
+
+        }
+        window.addEventListener('DOMContentLoaded', loadWaline);
+    </script>
+
+
+
+    
+    
+    
+    
+    </div>
+
+
+     
+</div>
+
+
+
+
+                    
+
+                    <div class="footer">
+    
+        <span> 
+            © 2010-2025 hvov~ 
+
+            
+                
+
+            
+                
+                    / <a href="/contact/"> 联系 </a>
+                
+
+            
+                
+                    / <a href="/atom.xml"> 订阅 </a>
+                
+
+            
+                
+                    / <a href="/sitemap.xml"> 地图 </a>
+                
+
+            
+        </span>
+       
+    
+</div>
+
+
+
+<!--这是指一条线往下的内容-->
+<div class="footer-last">
+    
+            <span>🌊浪潮注定上岸 眼泪总要流淌🌊</span>
+            
+                <span class="footer-last-span-right"><i>本站由<a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/index.html">Hexo</a>驱动｜使用<a target="_blank" rel="noopener" href="https://github.com/HiNinoJay/hexo-theme-A4">Hexo-theme-A4</a>主题</i></span>
+            
+    
+</div>
+
+
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+
+    <!--目录-->
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript" ></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js" type="text/javascript" ></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.tocify/1.9.0/javascripts/jquery.tocify.min.js" type="text/javascript" ></script>
+        
+<script src="/js/toc.js"></script>
+
+    
+
+    
+<script src="/js/randomHeaderContent.js"></script>
+
+    <!--回到顶部按钮-->
+    
+        
+<script src="/js/returnToTop.js"></script>
+
+    
+
+    
+        
+<script src="/js/returnToLastPage.js"></script>
+
+    
+
+
+
+
+
+<script src="/js/lightgallery/lightgallery.umd.min.js"></script>
+
+
+
+<script src="/js/lightgallery/plugins/lg-thumbnail.umd.min.js"></script>
+
+
+
+<script src="/js/lightgallery/plugins/lg-fullscreen.umd.min.js"></script>
+
+
+<script src="/js/lightgallery/plugins/lg-autoplay.umd.min.js"></script>
+
+
+<script src="/js/lightgallery/plugins/lg-zoom.umd.min.js"></script>
+
+
+<script src="/js/lightgallery/plugins/lg-rotate.umd.min.js"></script>
+
+
+<script src="/js/lightgallery/plugins/lg-paper.umd.min.js"></script>
+
+
+
+
+<script type="text/javascript">
+     
+    if (typeof lightGallery !== "undefined") {
+        var options1 = {
+            selector: '.gallery-item',
+            plugins: [lgThumbnail, lgFullscreen, lgAutoplay, lgZoom, lgRotate, lgPager], // 启用插件
+            thumbnail: true,          // 显示缩略图
+            zoom: true,               // 启用缩放功
+            rotate: true,             // 启用旋转功能能
+            autoplay: true,        // 启用自动播放功能
+            fullScreen: true,      // 启用全屏功能
+            pager: false, //页码,
+            zoomFromOrigin: true,   // 从原始位置缩放
+            actualSize: true,       // 启用查看实际大小的功能
+            enableZoomAfter: 300,    // 延迟缩放，确保图片加载完成后可缩放
+        };
+        lightGallery(document.getElementsByClassName('.article-gallery')[0], options1); // 修复选择器
+    }
+    
+</script>
+
+
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script> 
+
+                </div>
+            
+            
+                <!-- 回到顶部的按钮-->
+                <div class="progress-wrap shadow-drop-2-bottom">
+                    <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+                        <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"/>
+                    </svg>
+                </div>
+            
+            
+                <!-- 返回的按钮-->
+                <div class="return-to-last-progress-wrap shadow-drop-2-bottom">
+                    <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+                        <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"/>
+                    </svg>
+                </div>
+            
+    </body>
+</html>
+<script src="/js/emojiHandler.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        wrapEmojis('.paper');
+    });
+</script>

@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="zh">
+    
+    <head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport" />
+    <meta name="description" content="解决 Serv00 下兰空图床使用本地储存时访问图片 403" />
+    <meta name="hexo-theme-A4" content="v1.9.9" />
+    <link rel="alternate icon" type="image/webp" href="/img/favicon.webp">
+    <title>hvov~ | 喵喵喵</title>
+
+    
+        
+<link rel="stylesheet" href="/css/highlight/style1.css">
+
+        
+<link rel="stylesheet" href="/css/reset.css">
+
+        
+<link rel="stylesheet" href="/css/markdown.css">
+
+        
+<link rel="stylesheet" href="/css/fonts.css">
+ 
+         <!--注意：首页既不是post也不是page-->
+        
+            
+<link rel="stylesheet" href="/css/waline.css">
+
+        
+        
+        
+<link rel="stylesheet" href="/css/ui.css">
+ 
+        
+<link rel="stylesheet" href="/css/style.css">
+
+
+        
+            <!--返回顶部css-->
+            
+<link rel="stylesheet" href="/css/returnToTop.css">
+
+            
+<link rel="stylesheet" href="/css/unicons.css">
+
+        
+        
+            <!--目录-->
+            
+<link rel="stylesheet" href="/css/toc.css">
+
+        
+    
+
+    
+        
+<link rel="stylesheet" href="/css/returnToLastPage.css">
+
+    
+    
+   
+<link rel="stylesheet" href="/css/lightgallery-bundle.min.css">
+
+
+   
+        
+<link rel="stylesheet" href="/css/custom.css">
+
+    
+    <link rel='stylesheet' href='https://chinese-fonts-cdn.deno.dev/packages/lxgwwenkai/dist/LXGWWenKai-Regular/result.css' /> 
+<meta name="generator" content="Hexo 7.3.0"><link rel="alternate" href="/atom.xml" title="hvov~" type="application/atom+xml">
+</head>
+    
+    
+
+    
+    
+
+
+
+    
+
+    
+    
+
+
+
+
+    
+    
+
+
+    <body>
+        <script src="/js/darkmode-js.min.js"></script>
+        
+        <script>
+            const options = {
+                bottom: '40px', // default: '32px'
+                right: 'unset', // default: '32px'
+                left: '42px', // default: 'unset'
+                time: '0.3s', // default: '0.3s'
+                mixColor: '#fff', // default: '#fff'
+                backgroundColor: ' #e4e4e4 ',  // default: '#fff'
+                buttonColorDark: '#100f2c',  // default: '#100f2c'
+                buttonColorLight: '#fff', // default: '#fff'
+                saveInCookies: true, // default: true,
+                label: '🌓', // default: ''
+                autoMatchOsTheme: true // default: true
+            }
+            const darkmode = new Darkmode(options);
+            darkmode.showWidget();
+        </script>
+        
+        
+            
+                <div class="left-toc-container">
+                    <nav id="toc" class="bs-docs-sidebar"></nav>
+                </div>
+            
+        
+        <div class="paper">
+
+            
+
+            
+                <div class="shadow-drop-2-bottom paper-main">
+                    
+
+
+<div class="header">
+    <div class="header-container">
+        <style>
+            .header-img {
+                width: 56px;
+                height: auto;
+                object-fit: cover; /* 保持图片比例 */
+                transition: transform 0.3s ease-in-out; 
+                border-radius: 0; 
+            }
+            
+        </style>
+        <img 
+            alt="^-^" 
+            cache-control="max-age=86400" 
+            class="header-img" 
+            src="/img/favicon.webp" 
+        />
+        <div class="header-content">
+            <a class="logo" href="/">hvov~</a> 
+            <span class="description">hvov&#39;s fun</span> 
+        </div>
+    </div>
+    
+   
+    <ul class="nav">
+        
+            
+                <li><a href="/">🐈首页</a></li>
+            
+        
+            
+                <li><a href="/list/">⛰️文章</a></li>
+            
+        
+            
+                <li><a href="/tags/">📌标签</a></li>
+            
+        
+            
+                <li><a href="/categories/">🔖分类</a></li>
+            
+        
+            
+                <li><a href="/message/">📬留言</a></li>
+            
+        
+            
+                <li><a href="/about/">😎关于</a></li>
+            
+        
+    </ul>
+</div>
+
+                    
+                    
+
+                    
+                    
+
+                    <!--说明是文章post页面-->
+                    
+                        <div class="post-main">
+    
+
+    
+        
+            
+                <div class="post-main-title" style="text-align: center;">
+                    解决 Serv00 下兰空图床使用本地储存时访问图片 403
+                </div>
+            
+        
+      
+    
+
+    
+
+        
+            <div class="post-head-meta-center">
+        
+                
+                    <span>最近更新：2025-06-29</span> 
+                
+                
+                    
+                        &nbsp; | &nbsp;
+                    
+                     <span>字数总计：972</span>
+                
+                
+                    
+                        &nbsp; | &nbsp;
+                    
+                    <span>阅读估时：3分钟</span>
+                
+                
+                    
+                        &nbsp; | &nbsp;
+                    
+                    <span id="busuanzi_container_page_pv">
+                        阅读量：<span id="busuanzi_value_page_pv"></span>次
+                    </span>
+                
+            </div>
+    
+
+    <div class="post-md">
+        
+            
+                <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E5%89%8D%E8%A8%80"><span class="post-toc-text">前言</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E5%A4%8D%E7%8E%B0"><span class="post-toc-text">复现</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E8%A7%A3%E5%86%B3"><span class="post-toc-text">解决</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF-403%EF%BC%9F"><span class="post-toc-text">什么是 403？</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E6%98%AF%E4%BB%80%E4%B9%88%E5%8E%9F%E5%9B%A0%E5%AF%BC%E8%87%B4%E7%9A%84%EF%BC%9F"><span class="post-toc-text">是什么原因导致的？</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88"><span class="post-toc-text">解决方案</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E7%BB%93%E8%AF%AD"><span class="post-toc-text">结语</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E5%8F%82%E8%80%83%E9%93%BE%E6%8E%A5"><span class="post-toc-text">参考链接</span></a></li></ol>
+            
+        
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/hint.css/2.7.0/hint.min.css"><div class=".article-gallery"><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>最近我折腾起了 <a target="_blank" rel="noopener" href="https://www.serv00.com/">Serv00</a> 这东西，关于 Serv00 是什么，可以看<a target="_blank" rel="noopener" href="https://linux.do/t/topic/43121">这篇文章</a>，总而言之就是个免费 VPS，好像国内只有 <a target="_blank" rel="noopener" href="https://linux.do/">Linux.do</a> 有这方面的内容。稍后我可能会写这方面的东西，可是马上要开学了。</p>
+<p>我按照 Saika 大佬的<a target="_blank" rel="noopener" href="https://saika.us.kg/2024/01/27/serv00_logs/">Serv00 搭建各种服务</a>搭建了兰空图床（也就是 Lsky Pro），可正当我上传了第一个图片准备看一看时，结果它 403 了：</p>
+<p><a target="_blank" rel="noopener" href="https://img.xshaw.top/i/66c2e3d587c6b.png" class="gallery-item" style="box-shadow: none;"> <img src="https://img.xshaw.top/i/66c2e3d587c6b.png"></a></p>
+<p>于是便有了这篇文章。</p>
+<h2 id="复现"><a href="#复现" class="headerlink" title="复现"></a>复现</h2><p>复现的方法很简单，在使用兰空图床默认配置（使用<strong>本地储存</strong>）不对其改动的情况下，随便上传一个图片，引用或直接打开，即可复现该问题。</p>
+<p><a target="_blank" rel="noopener" href="https://img.xshaw.top/i/66c2e93e91a5f.gif" class="gallery-item" style="box-shadow: none;"> <img src="https://img.xshaw.top/i/66c2e93e91a5f.gif"></a></p>
+<h2 id="解决"><a href="#解决" class="headerlink" title="解决"></a>解决</h2><h3 id="什么是-403？"><a href="#什么是-403？" class="headerlink" title="什么是 403？"></a>什么是 403？</h3><p>要解决问题，首先要知道问题的本质。</p>
+<blockquote>
+<p>状态码 403 Forbidden 代表客户端错误，指的是服务器端有能力处理该请求，但是拒绝授权访问。<sup id="fnref:1"><a href="#fn:1" rel="footnote"><span class="hint--top hint--error hint--medium hint--rounded hint--bounce" aria-label="[403 Forbidden](https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Status/403)
+">[1]</span></a></sup><br>这个状态类似于 401，但进入 403 状态后即使重新验证也不会改变该状态。该访问是长期禁止的，并且与应用逻辑密切相关（例如没有足够的权限访问该资源）。<sup id="fnref:1"><a href="#fn:1" rel="footnote"><span class="hint--top hint--error hint--medium hint--rounded hint--bounce" aria-label="[403 Forbidden](https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Status/403)
+">[1]</span></a></sup></p>
+</blockquote>
+<blockquote>
+<p>通常一下三种场景会返回 403 错误<sup id="fnref:2"><a href="#fn:2" rel="footnote"><span class="hint--top hint--error hint--medium hint--rounded hint--bounce" aria-label="[为什么会出现 403 Forbidden 错误？三分钟教你快速解决问题！](https://blog.csdn.net/m0_48506962/article/details/107918903)
+">[2]</span></a></sup>：</p>
+<ol>
+<li>用户访问只能被内网访问的文件；</li>
+<li>访问禁止目录浏览的目录，例：设置 autoindex off 后访问目录；</li>
+<li>网站禁止特定的用户访问所有内容，例：网站屏蔽某个 ip 访问。</li>
+</ol>
+</blockquote>
+<h3 id="是什么原因导致的？"><a href="#是什么原因导致的？" class="headerlink" title="是什么原因导致的？"></a>是什么原因导致的？</h3><p>初步判断是文件权限的问题，因为我其他配置都是按照教程来的，也反复试了好几次还是 403。那么接下来开始解决问题吧。</p>
+<h3 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h3><p>首先打开 Serv00 的面板，在打开自带的文件管理器。</p>
+<p><a target="_blank" rel="noopener" href="https://img.xshaw.top/i/66c2edd404d82.png" title="就是侧边栏这个" class="gallery-item" style="box-shadow: none;"> <img src="https://img.xshaw.top/i/66c2edd404d82.png" alt="就是侧边栏这个"></a></p>
+<p>并选择主目录下的 <code>domains</code> 文件夹（如果你没有安装在 <code>domains</code> 文件夹内，请以实际为准，变通一下），再点上面的 <code>More</code>。</p>
+<p><a target="_blank" rel="noopener" href="https://img.xshaw.top/i/66c2ee6e25fd1.png" class="gallery-item" style="box-shadow: none;"> <img src="https://img.xshaw.top/i/66c2ee6e25fd1.png"></a></p>
+<p>在点击 <code>File Permissions</code> 给文件夹授予权限。</p>
+<p><a target="_blank" rel="noopener" href="https://img.xshaw.top/i/66c2ef1bb212d.png" class="gallery-item" style="box-shadow: none;"> <img src="https://img.xshaw.top/i/66c2ef1bb212d.png"></a></p>
+<p>把权限全部点上，别忘了勾选 <code>Apply recursively?</code>（这样可以给文件夹内的所有文件也一并授予权限）</p>
+<p><a target="_blank" rel="noopener" href="https://img.xshaw.top/i/66c2ef8d3f83c.png" class="gallery-item" style="box-shadow: none;"> <img src="https://img.xshaw.top/i/66c2ef8d3f83c.png"></a></p>
+<p>虽然权限已经授予了，但是在兰空图床默认设置下，图片路径命名规则是 <code>年/月/日</code>，也就是说，你第二天上传图片，它又会创建一个新的文件夹，经过测试发现，新的文件夹的权限依然不足，这就导致第二天的图片无法访问。这样一天天的太麻烦了，别着急，且看下一步。</p>
+<p>我们来的 <code>你的域名/admin/groups</code>，在里面选择你要更改的角色组（若没有其他特殊要求，就改 <code>系统默认组&amp;游客组</code>，毕竟建这东西也是给自己用的），点击这个编辑：</p>
+<p><a target="_blank" rel="noopener" href="https://img.xshaw.top/i/66c2f238c2d21.png" class="gallery-item" style="box-shadow: none;"> <img src="https://img.xshaw.top/i/66c2f238c2d21.png"></a></p>
+<p>把 <code>路径命名规则</code> 改成空值，这样兰空图床就不会每天更改路径了。（<strong>别忘了点右下角保存</strong>）</p>
+<p><a target="_blank" rel="noopener" href="https://img.xshaw.top/i/66c2f26ead65a.png" class="gallery-item" style="box-shadow: none;"> <img src="https://img.xshaw.top/i/66c2f26ead65a.png"></a></p>
+<p>现在问题就得到了解决。</p>
+<h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><p>虽然 Serv00 有 3G 的储存空间，但是可能还会出现不够用的情况，而且搭建图床是违反 <a target="_blank" rel="noopener" href="https://www.serv00.com/tos">tos</a> 的<sup id="fnref:3"><a href="#fn:3" rel="footnote"><span class="hint--top hint--error hint--medium hint--rounded hint--bounce" aria-label="[https://linux.do/t/topic/81730/5?u=imtgs](https://linux.do/t/topic/81730/5?u=imtgs)
+">[3]</span></a></sup><sup id="fnref:4"><a href="#fn:4" rel="footnote"><span class="hint--top hint--error hint--medium hint--rounded hint--bounce" aria-label="[Terms of Service](https://www.serv00.com/tos)
+">[4]</span></a></sup>。个人建议还是改用其他储存策略比较好。</p>
+<blockquote>
+<ol start="4">
+<li>In the case of installing on the user’s website software that makes excessive use of Serv00.com server resources, e.g. photo hosting, files, scripts for downloading files from other websites, etc., the website owner reserves the right to block the account.<sup id="fnref:4"><a href="#fn:4" rel="footnote"><span class="hint--top hint--error hint--medium hint--rounded hint--bounce" aria-label="[Terms of Service](https://www.serv00.com/tos)
+">[4]</span></a></sup><blockquote>
+<p>   (<em>如果用户在网站上安装过度使用 Serv00.com 服务器资源的软件，例如照片托管、文件、从其他网站下载文件的脚本等，网站所有者保留封锁该帐户的权利。</em>)</p>
+</blockquote>
+</li>
+</ol>
+</blockquote>
+<h2 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h2><div id="footnotes"><hr><div id="footnotelist"><ol style="list-style: none; padding-left: 0; margin-left: 40px"><li id="fn:1"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">1.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;"><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Status/403">403 Forbidden</a><a href="#fnref:1" rev="footnote"> ↩</a></span></li><li id="fn:2"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">2.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;"><a target="_blank" rel="noopener" href="https://blog.csdn.net/m0_48506962/article/details/107918903">为什么会出现 403 Forbidden 错误？三分钟教你快速解决问题！</a><a href="#fnref:2" rev="footnote"> ↩</a></span></li><li id="fn:3"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">3.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;"><a target="_blank" rel="noopener" href="https://linux.do/t/topic/81730/5?u=imtgs">https://linux.do/t/topic/81730/5?u=imtgs</a><a href="#fnref:3" rev="footnote"> ↩</a></span></li><li id="fn:4"><span style="display: inline-block; vertical-align: top; padding-right: 10px; margin-left: -40px">4.</span><span style="display: inline-block; vertical-align: top; margin-left: 10px;"><a target="_blank" rel="noopener" href="https://www.serv00.com/tos">Terms of Service</a><a href="#fnref:4" rev="footnote"> ↩</a></span></li></ol></div></div></div>
+    </div>
+
+    <div class="post-meta">
+        <i>
+        
+            <span>2024-08-19</span>
+            
+                <span>该篇文章被 hvov</span>
+            
+            
+                <span>打上标签:
+                    
+                    
+                        <a href='/tags/Serv00/'>
+                            Serv00
+                        </a>
+                    
+                        <a href='/tags/Lsky-Pro/'>
+                            Lsky Pro
+                        </a>
+                    
+                </span>
+             
+             
+                <span>归为分类:
+                    
+                    
+                        <a href='/categories/%E6%8A%80%E6%9C%AF/'>
+                            技术
+                        </a>
+                    
+                </span>
+            
+        
+        </i>
+    </div>
+    <br>
+    
+    
+        
+            
+    
+            <div class="post-footer-pre-next">
+                
+                    <span>上一篇：<a href='/5fddf106/'>常用 Git 命令清单</a></span>
+                
+
+                
+                    <span class="post-footer-pre-next-last-span-right">下一篇：<a href="/99526cca/">（待完善）VSCode 优化指北（设置、美化、插件）</a>
+                    </span>
+                
+            </div>
+    
+        
+    
+
+    
+        
+    <div class="comments-container">
+    <div id="comment-anchor"></div>
+    <div class="comment-area-title">
+        
+    </div>
+    
+        
+
+    <div id="waline"></div>
+    <script type="module"  >
+        import { init } from 'https://npm.elemecdn.com/hexo-theme-a4@latest/source/js/waline.mjs';
+        function loadWaline() {
+            init({
+                el: '#waline',
+                serverURL: 'waline.xshaw.top',
+                lang: 'zh-CN',
+                dark: 'body[class~="dark-mode"]',
+                requiredMeta: ['nick','mail'], // cannot customize by theme config, change it yourself
+                search: false, // 禁止表情包搜索
+                reaction: false, // 对文章打分
+                pageview: false, // 浏览量统计
+                comment: false, // 评论数统计
+
+                locale: {
+                    placeholder: '留下你的评论吧。',
+                    sofa: ''
+                },
+            });
+
+        }
+        window.addEventListener('DOMContentLoaded', loadWaline);
+    </script>
+
+
+
+    
+    
+    
+    
+    </div>
+
+
+     
+</div>
+
+
+
+
+                    
+
+                    <div class="footer">
+    
+        <span> 
+            © 2010-2025 hvov~ 
+
+            
+                
+
+            
+                
+                    / <a href="/contact/"> 联系 </a>
+                
+
+            
+                
+                    / <a href="/atom.xml"> 订阅 </a>
+                
+
+            
+                
+                    / <a href="/sitemap.xml"> 地图 </a>
+                
+
+            
+        </span>
+       
+    
+</div>
+
+
+
+<!--这是指一条线往下的内容-->
+<div class="footer-last">
+    
+            <span>🌊浪潮注定上岸 眼泪总要流淌🌊</span>
+            
+                <span class="footer-last-span-right"><i>本站由<a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/index.html">Hexo</a>驱动｜使用<a target="_blank" rel="noopener" href="https://github.com/HiNinoJay/hexo-theme-A4">Hexo-theme-A4</a>主题</i></span>
+            
+    
+</div>
+
+
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+
+    <!--目录-->
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript" ></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js" type="text/javascript" ></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.tocify/1.9.0/javascripts/jquery.tocify.min.js" type="text/javascript" ></script>
+        
+<script src="/js/toc.js"></script>
+
+    
+
+    
+<script src="/js/randomHeaderContent.js"></script>
+
+    <!--回到顶部按钮-->
+    
+        
+<script src="/js/returnToTop.js"></script>
+
+    
+
+    
+        
+<script src="/js/returnToLastPage.js"></script>
+
+    
+
+
+
+
+
+<script src="/js/lightgallery/lightgallery.umd.min.js"></script>
+
+
+
+<script src="/js/lightgallery/plugins/lg-thumbnail.umd.min.js"></script>
+
+
+
+<script src="/js/lightgallery/plugins/lg-fullscreen.umd.min.js"></script>
+
+
+<script src="/js/lightgallery/plugins/lg-autoplay.umd.min.js"></script>
+
+
+<script src="/js/lightgallery/plugins/lg-zoom.umd.min.js"></script>
+
+
+<script src="/js/lightgallery/plugins/lg-rotate.umd.min.js"></script>
+
+
+<script src="/js/lightgallery/plugins/lg-paper.umd.min.js"></script>
+
+
+
+
+<script type="text/javascript">
+     
+    if (typeof lightGallery !== "undefined") {
+        var options1 = {
+            selector: '.gallery-item',
+            plugins: [lgThumbnail, lgFullscreen, lgAutoplay, lgZoom, lgRotate, lgPager], // 启用插件
+            thumbnail: true,          // 显示缩略图
+            zoom: true,               // 启用缩放功
+            rotate: true,             // 启用旋转功能能
+            autoplay: true,        // 启用自动播放功能
+            fullScreen: true,      // 启用全屏功能
+            pager: false, //页码,
+            zoomFromOrigin: true,   // 从原始位置缩放
+            actualSize: true,       // 启用查看实际大小的功能
+            enableZoomAfter: 300,    // 延迟缩放，确保图片加载完成后可缩放
+        };
+        lightGallery(document.getElementsByClassName('.article-gallery')[0], options1); // 修复选择器
+    }
+    
+</script>
+
+
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script> 
+
+                </div>
+            
+            
+                <!-- 回到顶部的按钮-->
+                <div class="progress-wrap shadow-drop-2-bottom">
+                    <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+                        <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"/>
+                    </svg>
+                </div>
+            
+            
+                <!-- 返回的按钮-->
+                <div class="return-to-last-progress-wrap shadow-drop-2-bottom">
+                    <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+                        <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"/>
+                    </svg>
+                </div>
+            
+    </body>
+</html>
+<script src="/js/emojiHandler.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        wrapEmojis('.paper');
+    });
+</script>

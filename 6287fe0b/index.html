@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="zh">
+    
+    <head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport" />
+    <meta name="description" content="搭建 ESP8266 NodeMCU + Arduino 开发环境" />
+    <meta name="hexo-theme-A4" content="v1.9.9" />
+    <link rel="alternate icon" type="image/webp" href="/img/favicon.webp">
+    <title>hvov~ | 喵喵喵</title>
+
+    
+        
+<link rel="stylesheet" href="/css/highlight/style1.css">
+
+        
+<link rel="stylesheet" href="/css/reset.css">
+
+        
+<link rel="stylesheet" href="/css/markdown.css">
+
+        
+<link rel="stylesheet" href="/css/fonts.css">
+ 
+         <!--注意：首页既不是post也不是page-->
+        
+            
+<link rel="stylesheet" href="/css/waline.css">
+
+        
+        
+        
+<link rel="stylesheet" href="/css/ui.css">
+ 
+        
+<link rel="stylesheet" href="/css/style.css">
+
+
+        
+            <!--返回顶部css-->
+            
+<link rel="stylesheet" href="/css/returnToTop.css">
+
+            
+<link rel="stylesheet" href="/css/unicons.css">
+
+        
+        
+            <!--目录-->
+            
+<link rel="stylesheet" href="/css/toc.css">
+
+        
+    
+
+    
+        
+<link rel="stylesheet" href="/css/returnToLastPage.css">
+
+    
+    
+   
+<link rel="stylesheet" href="/css/lightgallery-bundle.min.css">
+
+
+   
+        
+<link rel="stylesheet" href="/css/custom.css">
+
+    
+    <link rel='stylesheet' href='https://chinese-fonts-cdn.deno.dev/packages/lxgwwenkai/dist/LXGWWenKai-Regular/result.css' /> 
+<meta name="generator" content="Hexo 7.3.0"><link rel="alternate" href="/atom.xml" title="hvov~" type="application/atom+xml">
+</head>
+    
+    
+
+    
+    
+
+
+
+    
+
+    
+    
+
+
+
+
+    
+    
+
+
+    <body>
+        <script src="/js/darkmode-js.min.js"></script>
+        
+        <script>
+            const options = {
+                bottom: '40px', // default: '32px'
+                right: 'unset', // default: '32px'
+                left: '42px', // default: 'unset'
+                time: '0.3s', // default: '0.3s'
+                mixColor: '#fff', // default: '#fff'
+                backgroundColor: ' #e4e4e4 ',  // default: '#fff'
+                buttonColorDark: '#100f2c',  // default: '#100f2c'
+                buttonColorLight: '#fff', // default: '#fff'
+                saveInCookies: true, // default: true,
+                label: '🌓', // default: ''
+                autoMatchOsTheme: true // default: true
+            }
+            const darkmode = new Darkmode(options);
+            darkmode.showWidget();
+        </script>
+        
+        
+            
+                <div class="left-toc-container">
+                    <nav id="toc" class="bs-docs-sidebar"></nav>
+                </div>
+            
+        
+        <div class="paper">
+
+            
+
+            
+                <div class="shadow-drop-2-bottom paper-main">
+                    
+
+
+<div class="header">
+    <div class="header-container">
+        <style>
+            .header-img {
+                width: 56px;
+                height: auto;
+                object-fit: cover; /* 保持图片比例 */
+                transition: transform 0.3s ease-in-out; 
+                border-radius: 0; 
+            }
+            
+        </style>
+        <img 
+            alt="^-^" 
+            cache-control="max-age=86400" 
+            class="header-img" 
+            src="/img/favicon.webp" 
+        />
+        <div class="header-content">
+            <a class="logo" href="/">hvov~</a> 
+            <span class="description">hvov&#39;s fun</span> 
+        </div>
+    </div>
+    
+   
+    <ul class="nav">
+        
+            
+                <li><a href="/">🐈首页</a></li>
+            
+        
+            
+                <li><a href="/list/">⛰️文章</a></li>
+            
+        
+            
+                <li><a href="/tags/">📌标签</a></li>
+            
+        
+            
+                <li><a href="/categories/">🔖分类</a></li>
+            
+        
+            
+                <li><a href="/message/">📬留言</a></li>
+            
+        
+            
+                <li><a href="/about/">😎关于</a></li>
+            
+        
+    </ul>
+</div>
+
+                    
+                    
+
+                    
+                    
+
+                    <!--说明是文章post页面-->
+                    
+                        <div class="post-main">
+    
+
+    
+        
+            
+                <div class="post-main-title" style="text-align: center;">
+                    搭建 ESP8266 NodeMCU + Arduino 开发环境
+                </div>
+            
+        
+      
+    
+
+    
+
+        
+            <div class="post-head-meta-center">
+        
+                
+                    <span>最近更新：2025-06-29</span> 
+                
+                
+                    
+                        &nbsp; | &nbsp;
+                    
+                     <span>字数总计：765</span>
+                
+                
+                    
+                        &nbsp; | &nbsp;
+                    
+                    <span>阅读估时：2分钟</span>
+                
+                
+                    
+                        &nbsp; | &nbsp;
+                    
+                    <span id="busuanzi_container_page_pv">
+                        阅读量：<span id="busuanzi_value_page_pv"></span>次
+                    </span>
+                
+            </div>
+    
+
+    <div class="post-md">
+        
+            
+                <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E5%AE%89%E8%A3%85-Arduino"><span class="post-toc-text">安装 Arduino</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Windows"><span class="post-toc-text">Windows</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Linux"><span class="post-toc-text">Linux</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#MacOS"><span class="post-toc-text">MacOS</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E5%AE%89%E8%A3%85-CH340-%E9%A9%B1%E5%8A%A8"><span class="post-toc-text">安装 CH340 驱动</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Windows-MacOS"><span class="post-toc-text">Windows &amp; MacOS</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Linux-1"><span class="post-toc-text">Linux</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E9%85%8D%E7%BD%AE-Arduino"><span class="post-toc-text">配置 Arduino</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E7%83%A7%E5%85%A5%E6%89%8B%E6%B3%95%EF%BC%88%E5%BF%85%E8%AF%BB%EF%BC%81%EF%BC%81%EF%BC%81%EF%BC%89"><span class="post-toc-text">烧入手法（必读！！！）</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E6%B5%8B%E8%AF%95"><span class="post-toc-text">测试</span></a></li></ol>
+            
+        
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/hint.css/2.7.0/hint.min.css"><div class=".article-gallery"><p>暑假闲得无聊在淘宝上买了个 ESP8266 NodeMCU 开发板，主要是它性能又好又不贵，信泰微电子这家店的 ESP8266 有时候活动只要 6 块钱就能拿下。</p>
+<p><a target="_blank" rel="noopener" href="https://pic.imgdb.cn/item/65aa308e871b83018a2943bd.png" class="gallery-item" style="box-shadow: none;"> <img src="https://pic.imgdb.cn/item/65aa308e871b83018a2943bd.png"></a></p>
+<p>拿到手上就急着想试试了，看了看评论好像需要用 Arduino 开发（还需要学 C 语言 555~ ）</p>
+<h2 id="安装-Arduino"><a href="#安装-Arduino" class="headerlink" title="安装 Arduino"></a>安装 Arduino</h2><h3 id="Windows"><a href="#Windows" class="headerlink" title="Windows"></a>Windows</h3><p>前往官方<a target="_blank" rel="noopener" href="https://www.arduino.cc/en/software">下载页面</a>下载最新版即可，一般只需要下载最新版的 <code>Win 10 and newer, 64 bits</code>，下好后双击打开一直下一步就行。</p>
+<p><a target="_blank" rel="noopener" href="https://pic.imgdb.cn/item/65aa30b9871b83018a29d649.png" class="gallery-item" style="box-shadow: none;"> <img src="https://pic.imgdb.cn/item/65aa30b9871b83018a29d649.png"></a></p>
+<h3 id="Linux"><a href="#Linux" class="headerlink" title="Linux"></a>Linux</h3><p>一般的 Linux 发行版本依然需要前往官方<a target="_blank" rel="noopener" href="https://www.arduino.cc/en/software">下载页面</a>，只需要下载最新版的 <code>AppImage 64 bits (X86-64)</code>，双击打开即可。</p>
+<p><a target="_blank" rel="noopener" href="https://pic.imgdb.cn/item/65aa30cf871b83018a2a226c.png" class="gallery-item" style="box-shadow: none;"> <img src="https://pic.imgdb.cn/item/65aa30cf871b83018a2a226c.png"></a></p>
+<p>而 Arch 可以直接使用 yay 安装</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yay -S arduino-ide-bin</span><br></pre></td></tr></table></figure>
+
+<h3 id="MacOS"><a href="#MacOS" class="headerlink" title="MacOS"></a>MacOS</h3><p>依然需要前往官方<a target="_blank" rel="noopener" href="https://www.arduino.cc/en/software">下载页面</a>，按照对应条件下载安装包。</p>
+<p><a target="_blank" rel="noopener" href="https://pic.imgdb.cn/item/65aa30ee871b83018a2a9889.png" class="gallery-item" style="box-shadow: none;"> <img src="https://pic.imgdb.cn/item/65aa30ee871b83018a2a9889.png"></a></p>
+<h2 id="安装-CH340-驱动"><a href="#安装-CH340-驱动" class="headerlink" title="安装 CH340 驱动"></a>安装 CH340 驱动</h2><h3 id="Windows-MacOS"><a href="#Windows-MacOS" class="headerlink" title="Windows &amp; MacOS"></a>Windows &amp; MacOS</h3><p>Windows 官方驱动：<a target="_blank" rel="noopener" href="https://www.wch.cn/download/CH341SER_EXE.html">https://www.wch.cn/download/CH341SER_EXE.html</a></p>
+<p>MacOS 官方驱动：<a target="_blank" rel="noopener" href="https://www.wch.cn/download/CH341SER_MAC_ZIP.html">https://www.wch.cn/download/CH341SER_MAC_ZIP.html</a></p>
+<h3 id="Linux-1"><a href="#Linux-1" class="headerlink" title="Linux"></a>Linux</h3><p>较新的 Linux 内核已经内置了 CH340 的驱动，无需自行安装</p>
+<h2 id="配置-Arduino"><a href="#配置-Arduino" class="headerlink" title="配置 Arduino"></a>配置 Arduino</h2><p>默认的 Arduino 不自带 ESP8266 的开发环境，需要手动安装。这一步是通用的，不区分操作系统。</p>
+<p>首先先设置语言到中文，进入 Arduino，依次点击 <code>File =&gt; Preferences</code>，或者直接 Ctrl + , ，在 <code>Language</code> 选项中选择 <code>中文（简体）</code>，在点右下角的 <code>OK</code>，重新加载后便是中文界面了。</p>
+<p><a target="_blank" rel="noopener" href="https://pic.imgdb.cn/item/65aa312f871b83018a2b7eb8.png" class="gallery-item" style="box-shadow: none;"> <img src="https://pic.imgdb.cn/item/65aa312f871b83018a2b7eb8.png"></a></p>
+<p>接下来在 <code>首选项</code> 的 <code>其他开发版管理器地址</code> 项中填入 <code>http://arduino.esp8266.com/stable/package_esp8266com_index.json</code>，然后 <code>确认</code>。</p>
+<p>然后我们点击 <code>工具 =&gt; 开发板 =&gt; 开发板管理器</code>，并在输入框中输入 <code>ESP8266</code>，点击下面的 <code>安装</code>，等待下载（注意：据相关文献考证，有 99% 的概率会安装失败（，最简单的解决方法就是魔法上网。</p>
+<p>接下来就可以插上你的开发板了，不会还有人不会插数据线吧（</p>
+<p>现在 <code>工具 =&gt; 开发板 =&gt; esp8266</code>，选择 <code>NodeMCU 1.0(ESP-12E Module)</code>，<code>工具 =&gt; 端口</code> 选择唯一的那一个（如果你有两个开发板，建议先拔掉一个，以免搞混）</p>
+<hr>
+<p>如果你目前的操作系统是 Linux，看不见端口是正常现象，解决方法是执行以下命令：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> <span class="built_in">chmod</span> 777 /dev/ttyUSB0</span><br></pre></td></tr></table></figure>
+
+<p>不过每次插上 ESP8266 都需要重新执行（Linux の痛）</p>
+<h2 id="烧入手法（必读！！！）"><a href="#烧入手法（必读！！！）" class="headerlink" title="烧入手法（必读！！！）"></a>烧入手法（必读！！！）</h2><p>仔细观察你会发现，ESP8266 开发板上有两个按钮，分别是 <code>FLASH</code> 和 <code>RST</code>，在即将烧入代码之前，需要按住 <code>FLASH</code> 不松，然后按一下 <code>RST</code> 松手，此时 <code>FLASH</code> 还不能松，这时候点击 Arduino 左上角的<code>-&gt;</code>开始烧入，待到烧入完成后再松开 <code>FLASH</code></p>
+<h2 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h2><p>安装 ESP8266 开发环境后，Arduino 里会有几个示例文件供我们测试。</p>
+<p>点击 <code>文件 =&gt; 示例 =&gt; ESP8266</code>，选择 <code>Blink</code>，之后按照烧入手法烧入程序，你将看到你的开发板会一直闪烁亮蓝光，此时你已经配置好了，可以继续开发了！</p>
+</div>
+    </div>
+
+    <div class="post-meta">
+        <i>
+        
+            <span>2023-08-23</span>
+            
+                <span>该篇文章被 hvov</span>
+            
+            
+                <span>打上标签:
+                    
+                    
+                        <a href='/tags/ESP8266/'>
+                            ESP8266
+                        </a>
+                    
+                        <a href='/tags/Arduino/'>
+                            Arduino
+                        </a>
+                    
+                </span>
+             
+             
+                <span>归为分类:
+                    
+                    
+                        <a href='/categories/%E6%8A%80%E6%9C%AF/'>
+                            技术
+                        </a>
+                    
+                </span>
+            
+        
+        </i>
+    </div>
+    <br>
+    
+    
+        
+            
+    
+            <div class="post-footer-pre-next">
+                
+                    <span>上一篇：<a href='/99526cca/'>（待完善）VSCode 优化指北（设置、美化、插件）</a></span>
+                
+
+                
+                    <span class="post-footer-pre-next-last-span-right">下一篇：<a href="/6cc079cc/">Noteonline 正式上线</a>
+                    </span>
+                
+            </div>
+    
+        
+    
+
+    
+        
+    <div class="comments-container">
+    <div id="comment-anchor"></div>
+    <div class="comment-area-title">
+        
+    </div>
+    
+        
+
+    <div id="waline"></div>
+    <script type="module"  >
+        import { init } from 'https://npm.elemecdn.com/hexo-theme-a4@latest/source/js/waline.mjs';
+        function loadWaline() {
+            init({
+                el: '#waline',
+                serverURL: 'waline.xshaw.top',
+                lang: 'zh-CN',
+                dark: 'body[class~="dark-mode"]',
+                requiredMeta: ['nick','mail'], // cannot customize by theme config, change it yourself
+                search: false, // 禁止表情包搜索
+                reaction: false, // 对文章打分
+                pageview: false, // 浏览量统计
+                comment: false, // 评论数统计
+
+                locale: {
+                    placeholder: '留下你的评论吧。',
+                    sofa: ''
+                },
+            });
+
+        }
+        window.addEventListener('DOMContentLoaded', loadWaline);
+    </script>
+
+
+
+    
+    
+    
+    
+    </div>
+
+
+     
+</div>
+
+
+
+
+                    
+
+                    <div class="footer">
+    
+        <span> 
+            © 2010-2025 hvov~ 
+
+            
+                
+
+            
+                
+                    / <a href="/contact/"> 联系 </a>
+                
+
+            
+                
+                    / <a href="/atom.xml"> 订阅 </a>
+                
+
+            
+                
+                    / <a href="/sitemap.xml"> 地图 </a>
+                
+
+            
+        </span>
+       
+    
+</div>
+
+
+
+<!--这是指一条线往下的内容-->
+<div class="footer-last">
+    
+            <span>🌊浪潮注定上岸 眼泪总要流淌🌊</span>
+            
+                <span class="footer-last-span-right"><i>本站由<a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/index.html">Hexo</a>驱动｜使用<a target="_blank" rel="noopener" href="https://github.com/HiNinoJay/hexo-theme-A4">Hexo-theme-A4</a>主题</i></span>
+            
+    
+</div>
+
+
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+
+    <!--目录-->
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript" ></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js" type="text/javascript" ></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.tocify/1.9.0/javascripts/jquery.tocify.min.js" type="text/javascript" ></script>
+        
+<script src="/js/toc.js"></script>
+
+    
+
+    
+<script src="/js/randomHeaderContent.js"></script>
+
+    <!--回到顶部按钮-->
+    
+        
+<script src="/js/returnToTop.js"></script>
+
+    
+
+    
+        
+<script src="/js/returnToLastPage.js"></script>
+
+    
+
+
+
+
+
+<script src="/js/lightgallery/lightgallery.umd.min.js"></script>
+
+
+
+<script src="/js/lightgallery/plugins/lg-thumbnail.umd.min.js"></script>
+
+
+
+<script src="/js/lightgallery/plugins/lg-fullscreen.umd.min.js"></script>
+
+
+<script src="/js/lightgallery/plugins/lg-autoplay.umd.min.js"></script>
+
+
+<script src="/js/lightgallery/plugins/lg-zoom.umd.min.js"></script>
+
+
+<script src="/js/lightgallery/plugins/lg-rotate.umd.min.js"></script>
+
+
+<script src="/js/lightgallery/plugins/lg-paper.umd.min.js"></script>
+
+
+
+
+<script type="text/javascript">
+     
+    if (typeof lightGallery !== "undefined") {
+        var options1 = {
+            selector: '.gallery-item',
+            plugins: [lgThumbnail, lgFullscreen, lgAutoplay, lgZoom, lgRotate, lgPager], // 启用插件
+            thumbnail: true,          // 显示缩略图
+            zoom: true,               // 启用缩放功
+            rotate: true,             // 启用旋转功能能
+            autoplay: true,        // 启用自动播放功能
+            fullScreen: true,      // 启用全屏功能
+            pager: false, //页码,
+            zoomFromOrigin: true,   // 从原始位置缩放
+            actualSize: true,       // 启用查看实际大小的功能
+            enableZoomAfter: 300,    // 延迟缩放，确保图片加载完成后可缩放
+        };
+        lightGallery(document.getElementsByClassName('.article-gallery')[0], options1); // 修复选择器
+    }
+    
+</script>
+
+
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script> 
+
+                </div>
+            
+            
+                <!-- 回到顶部的按钮-->
+                <div class="progress-wrap shadow-drop-2-bottom">
+                    <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+                        <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"/>
+                    </svg>
+                </div>
+            
+            
+                <!-- 返回的按钮-->
+                <div class="return-to-last-progress-wrap shadow-drop-2-bottom">
+                    <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+                        <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"/>
+                    </svg>
+                </div>
+            
+    </body>
+</html>
+<script src="/js/emojiHandler.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        wrapEmojis('.paper');
+    });
+</script>
