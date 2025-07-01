@@ -1,7 +1,7 @@
-http://example.com/99526cca/
-http://example.com/4a17b156/
 http://example.com/about/index.html
 http://example.com/contact/index.html
+http://example.com/99526cca/
+http://example.com/4a17b156/
 http://example.com/message/index.html
 http://example.com/index/index.html
 http://example.com/8f913a4e/
@@ -26,9 +26,9 @@ http://example.com/tags/CDN/
 http://example.com/tags/%E6%B8%BA%E8%BD%AF%E5%85%AC%E7%9B%8A/
 http://example.com/tags/Serv00/
 http://example.com/tags/Lsky-Pro/
-http://example.com/tags/VSCode/
 http://example.com/tags/Hexo/
 http://example.com/tags/Stellar/
+http://example.com/tags/VSCode/
 http://example.com/categories/%E6%8A%80%E6%9C%AF/
 http://example.com/categories/%E5%A4%87%E5%BF%98/
 http://example.com/categories/%E9%A1%B9%E7%9B%AE/

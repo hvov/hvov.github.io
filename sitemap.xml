@@ -2,24 +2,6 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://example.com/99526cca/</loc>
-    
-    <lastmod>2025-07-01</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://example.com/4a17b156/</loc>
-    
-    <lastmod>2025-07-01</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>http://example.com/about/index.html</loc>
     
     <lastmod>2025-07-01</lastmod>
@@ -30,6 +12,24 @@
   
   <url>
     <loc>http://example.com/contact/index.html</loc>
+    
+    <lastmod>2025-07-01</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://example.com/99526cca/</loc>
+    
+    <lastmod>2025-07-01</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://example.com/4a17b156/</loc>
     
     <lastmod>2025-07-01</lastmod>
     
@@ -230,13 +230,6 @@
   </url>
   
   <url>
-    <loc>http://example.com/tags/VSCode/</loc>
-    <lastmod>2025-07-01</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>http://example.com/tags/Hexo/</loc>
     <lastmod>2025-07-01</lastmod>
     <changefreq>weekly</changefreq>
@@ -245,6 +238,13 @@
   
   <url>
     <loc>http://example.com/tags/Stellar/</loc>
+    <lastmod>2025-07-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://example.com/tags/VSCode/</loc>
     <lastmod>2025-07-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
